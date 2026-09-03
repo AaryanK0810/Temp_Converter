@@ -1,17 +1,97 @@
-.container
-{
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
 }
 
-button{
+.container {
+    width: 350px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 24px;
+    text-align: right;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+#display:focus {
+    border-color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+}
+
+.buttons,
+.clearButton {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 8px;
     font-size: 20px;
+    cursor: pointer;
+    background-color: #e9e9e9;
 }
 
-button:hover {
-    background-color: black;
-    color: red;
+.buttons:hover {
+    background-color: #d5d5d5;
 }
+
+.clearButton {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.clearButton:hover {
+    background-color: #ff4c4c;
+}
+
+.convertButton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.convertToButton,
+#convertToC {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+.convertToButton:hover,
+#convertToC:hover {
+    background-color: #555;
+}
+
