@@ -19,7 +19,7 @@ buttons.forEach(button => {
 });
 
 convertButton.addEventListener('click', () => {
-    const temp = parseFloat(display.value);
+    const temp = display.value
 
     if (isNaN(temp)) {
         display.value = 'Please enter a value';
@@ -27,17 +27,21 @@ convertButton.addEventListener('click', () => {
     }
 
     if (flag) {
-        display.value = convertToFahrenheit(temp).toFixed(2);
+        display.value = convertToFahrenheit(temp)
         flag = false;
+        convertButton.textContent = 'Convert to C';
     } else {
-        display.value = convertToCelsius(temp).toFixed(2);
+        display.value = convertToCelsius(temp)
         flag = true;
+        convertButton.textContent = 'Convert to F'
     }
 });
 
 clearButton.addEventListener('click', () => {
     display.value = '';
     flag = true;
+    convertButton.textContent = 'Convert to °F';
+    location.reload();
 });
 
 function convertToFahrenheit(temp1) {
