@@ -2,8 +2,8 @@ const buttons = document.querySelectorAll('.buttons');
 const display = document.getElementById('display');
 const clearButton = document.querySelector('.clearButton');
 const convertButton = document.querySelector('.convertToButton');
+const convertToC = document.querySelector('#convertToC');
 
-let flag = true;
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -26,21 +26,26 @@ convertButton.addEventListener('click', () => {
         return;
     }
 
-    if (flag) {
-        display.value = convertToFahrenheit(temp)
-        flag = false;
-        convertButton.textContent = 'Convert to C';
-    } else {
-        display.value = convertToCelsius(temp)
-        flag = true;
-        convertButton.textContent = 'Convert to F'
-    }
+    display.value = convertToFahrenheit(temp)
 });
+
+convertToC.addEventListener('click', () => {
+    const temp = display.value
+
+    if (temp === '' ||isNaN(temp)) {
+        display.value = 'Please enter a value';
+        return;
+    }
+
+    display.value = convertToCelsius(temp);
+});
+
+
+
+
 
 clearButton.addEventListener('click', () => {
     display.value = '';
-    flag = true;
-    convertButton.textContent = 'Convert to °F';
     location.reload();
 });
 

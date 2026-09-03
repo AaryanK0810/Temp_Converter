@@ -25,11 +25,14 @@
         <tr>
             <td><button class = 'buttons'>9</button></td>
             <td><button class = 'buttons'>0</button></td>
-            <td><button class = 'buttons'>.</button></td>
+            <td><button class = 'buttons' #id = "deci">.</button></td>
             <td><button class = 'clearButton'>AC</button></td>
         </tr>
     </table>
-    <button class = 'convertToButton'>Convert to °F</button>
+    <div class="convertButton">
+        <button class = 'convertToButton'>Convert to °F</button>
+        <button id="convertToC">Convert to °C </button>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
