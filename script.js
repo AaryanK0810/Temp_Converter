@@ -21,7 +21,7 @@ buttons.forEach(button => {
 convertButton.addEventListener('click', () => {
     const temp = display.value
 
-    if (isNaN(temp)) {
+    if (temp === '' ||isNaN(temp)) {
         display.value = 'Please enter a value';
         return;
     }
